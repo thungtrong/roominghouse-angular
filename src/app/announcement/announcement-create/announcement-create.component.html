@@ -1,0 +1,27 @@
+<div class="col-6 offset-3">
+    <h4>Tạo mới</h4>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="title"></label>
+            <input [(ngModel)]="announcement.title" type="text" class="form-control" placeholder="Nhập tiêu dề"
+                id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="body"></label>
+            <textarea [(ngModel)]="announcement.body" type="text" multiple="true" class="form-control"
+                placeholder="Nhập nội dung" id="body" name="body" required rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="date"></label>
+            <input type="date" #myDate [valueAsDate]="announcement.date" (change)="parseDate($event.target)"
+                class="form-control" id="date" name="date" required>
+        </div>
+
+        <div class="form-group d-flex justify-content-end m-2">
+            <button class="btn btn-primary" type="submit" id="submit">Tạo</button>
+            <a routerLink=".." class="btn btn-default">Quay Lại</a>
+        </div>
+    </form>
+</div>

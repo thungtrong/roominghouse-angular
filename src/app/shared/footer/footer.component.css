@@ -1,0 +1,11 @@
+#footer {
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    bottom: 0;
+    background-color: rgb(162, 189, 203);
+    padding: 0px;
+    width: 83%;
+    height: 60px;
+    line-height: 60px;
+}
