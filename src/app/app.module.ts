@@ -11,6 +11,7 @@ import { AnnouncementComponent } from './announcement/announcement/announcement.
 import { AnnouncementListComponent } from './announcement/announcement-list/announcement-list.component';
 import { FormsModule } from '@angular/forms';
 import { AnnouncementUpdateComponent } from './announcement/announcement-update/announcement-update.component';
+import { AnnouncementViewComponent } from './announcement/announcement-view/announcement-view.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AnnouncementUpdateComponent } from './announcement/announcement-update/
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
+    AnnouncementViewComponent,
 
   ],
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Announcement } from 'src/app/model/announcement';
 import { AnnouncementService } from 'src/app/service/announcement.service';
 
@@ -7,23 +8,32 @@ import { AnnouncementService } from 'src/app/service/announcement.service';
   templateUrl: './announcement-list.component.html',
   styleUrls: ['./announcement-list.component.css']
 })
-export class AnnouncementListComponent implements OnInit {
+export class AnnouncementListComponent implements OnInit, OnChanges {
   tableHeaders: string[] = ['Tiêu Đề', 'Nội Dung', 'Date', 'Action'];
   announcements: Announcement[] = [];
-
-  constructor(private announcementService: AnnouncementService) { 
+  constructor(
+    private announcementService: AnnouncementService,
+    private activeRoute: ActivatedRoute
+    ) { 
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 
   ngOnInit(): void {
-    this.getAllAnnouncements();
+    this.getAllAnnouncements(0);
   }
 
-  private getAllAnnouncements(): void {
-    this.announcementService.getAnnouncementList().subscribe(
+  private getAllAnnouncements(page: number): void {
+    this.announcementService.getAnnouncementList(page).subscribe(
       data => {
-        this.announcements = data;
+        console.log(data);
+        this.announcements = data.content;
+        // data.content.forEach((announcement) => {this.announcements.push(announcement)})
+        // data.content.forEach((announcement) => {this.announcements.push(announcement)})
       }
     );
   }
 
 }
+;

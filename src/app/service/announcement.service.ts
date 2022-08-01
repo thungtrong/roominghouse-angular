@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Announcement } from '../model/announcement';
+import { Page } from '../model/page';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,9 @@ export class AnnouncementService {
   
   constructor(private httpClient: HttpClient) { }
 
-  public getAnnouncementList(): Observable<Announcement[]>
+  public getAnnouncementList(page: number): Observable<Page<Announcement>>
   {
-    return this.httpClient.get<Announcement[]>(`${this.apiUrl}/all`);
+    return this.httpClient.get<Page<Announcement>>(`${this.apiUrl}/list?page=${page}`);
   }
 
   public createAnnouncement(announcement: Announcement): Observable<Announcement>
