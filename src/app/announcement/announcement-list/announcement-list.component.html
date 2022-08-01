@@ -8,7 +8,7 @@
 
         <tbody>
             <tr *ngFor="let announcement of announcements">
-                <td>{{ announcement.title }}</td>
+                <td><a href="announcement/detail/{{announcement.id}}"> {{ announcement.title }} </a></td>
                 <td>{{ announcement.body }}</td>
                 <td>{{ announcement.date }}</td>
                 <td>

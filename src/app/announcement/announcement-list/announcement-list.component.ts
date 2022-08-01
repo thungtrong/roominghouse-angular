@@ -8,16 +8,12 @@ import { AnnouncementService } from 'src/app/service/announcement.service';
   templateUrl: './announcement-list.component.html',
   styleUrls: ['./announcement-list.component.css']
 })
-export class AnnouncementListComponent implements OnInit, OnChanges {
+export class AnnouncementListComponent implements OnInit {
   tableHeaders: string[] = ['Tiêu Đề', 'Nội Dung', 'Date', 'Action'];
   announcements: Announcement[] = [];
   constructor(
     private announcementService: AnnouncementService,
-    private activeRoute: ActivatedRoute
     ) { 
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
   }
 
   ngOnInit(): void {

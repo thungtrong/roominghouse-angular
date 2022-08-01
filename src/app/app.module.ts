@@ -11,7 +11,7 @@ import { AnnouncementComponent } from './announcement/announcement/announcement.
 import { AnnouncementListComponent } from './announcement/announcement-list/announcement-list.component';
 import { FormsModule } from '@angular/forms';
 import { AnnouncementUpdateComponent } from './announcement/announcement-update/announcement-update.component';
-import { AnnouncementViewComponent } from './announcement/announcement-view/announcement-view.component';
+import { AnnouncementDetailComponent } from './announcement/announcement-detail/announcement-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,7 @@ import { AnnouncementViewComponent } from './announcement/announcement-view/anno
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    AnnouncementViewComponent,
-
+    AnnouncementDetailComponent,
   ],
   imports: [
     BrowserModule,
