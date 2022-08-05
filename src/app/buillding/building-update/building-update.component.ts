@@ -40,4 +40,10 @@ export class BuildingUpdateComponent implements OnInit {
       error: (error) => console.log(error)
     });
   }
+
+  goBack()
+  {
+    this.router.navigate(['/building']);
+  }
+
 }

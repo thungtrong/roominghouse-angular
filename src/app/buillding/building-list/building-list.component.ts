@@ -9,7 +9,7 @@ import { BuildingService } from 'src/app/service/building.service';
 })
 export class BuildingListComponent implements OnInit {
 
-  tableHeaders: string[] = ['Tên', 'Địa chỉ', 'Mô Tả'];
+  tableHeaders: string[] = ['Tên', 'Địa chỉ', 'Mô Tả', ''];
   buildings: Building[] = [];
   constructor(
     private buildingService: BuildingService,
