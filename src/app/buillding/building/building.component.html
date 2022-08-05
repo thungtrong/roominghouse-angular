@@ -1,0 +1,24 @@
+<div class="container-scroller">
+    <div class="row">
+        <app-sidebar></app-sidebar>
+
+        <div class="col offset-2">
+            <div class="container">
+
+                <app-navbar></app-navbar>
+                <div class="row">
+                    <div class="header-container d-flex justify-content-between" id="header-container">
+                        <span id="title">Toà Nhà</span>
+                        <a routerLink="create" routerLinkActive="d-none" class="btn btn-success"
+                            id="create-button">Create</a>
+                    </div>
+
+                    <router-outlet></router-outlet>
+                </div>
+                <app-footer></app-footer>
+
+            </div>
+        </div>
+
+    </div>
+</div>

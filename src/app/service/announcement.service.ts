@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Announcement } from '../model/announcement';
+import { Announcement } from '../model/Announcement';
 import { Page } from '../model/page';
 
 @Injectable({
@@ -30,5 +30,10 @@ export class AnnouncementService {
   public updateAnnouncement(announcement: Announcement): Observable<Announcement>
   {
     return this.httpClient.put<Announcement>(`${this.apiUrl}/update`, announcement);
+  }
+
+  public deleteAnnouncement(announcement: Announcement): Observable<void>
+  {
+    return this.httpClient.delete<void>(`${this.apiUrl}/delete`, {body:announcement});
   }
 }

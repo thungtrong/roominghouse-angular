@@ -12,6 +12,11 @@ import { AnnouncementListComponent } from './announcement/announcement-list/anno
 import { FormsModule } from '@angular/forms';
 import { AnnouncementUpdateComponent } from './announcement/announcement-update/announcement-update.component';
 import { AnnouncementDetailComponent } from './announcement/announcement-detail/announcement-detail.component';
+import { BuildingComponent } from './buillding/building/building.component';
+import { BuildingListComponent } from './buillding/building-list/building-list.component';
+import { BuildingDetailComponent } from './buillding/building-detail/building-detail.component';
+import { BuildingUpdateComponent } from './buillding/building-update/building-update.component';
+import { BuildingCreateComponent } from './buillding/building-create/building-create.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,11 @@ import { AnnouncementDetailComponent } from './announcement/announcement-detail/
     SidebarComponent,
     FooterComponent,
     AnnouncementDetailComponent,
+    BuildingComponent,
+    BuildingListComponent,
+    BuildingDetailComponent,
+    BuildingUpdateComponent,
+    BuildingCreateComponent,
   ],
   imports: [
     BrowserModule,

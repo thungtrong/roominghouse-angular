@@ -8,7 +8,7 @@ import { Item } from './sidebar-item';
 })
 export class SidebarComponent implements OnInit {
   menu: Item[] = [
-    {title: 'Toà Nhà',  path:"/service"}, 
+    {title: 'Toà Nhà',  path:"/building"}, 
     {title: 'Phòng',  path:"/service"},
     {title: 'Người Thuê',  path:"/service"},
     {title: 'Hợp Đồng',  path:"/service"},

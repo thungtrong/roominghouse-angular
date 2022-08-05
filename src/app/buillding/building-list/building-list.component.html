@@ -1,0 +1,25 @@
+<div style="min-height: 74.7vh;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let header of tableHeaders"> {{header}} </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let building of buildings">
+                <td>
+                    {{ building.name }}
+                </td>
+                <td>{{ building.address }}</td>
+                <td>{{ building.description }}
+                </td>
+                <td>
+                    <a type="button" class="btn btn-primary" href="building/detail/{{building.id}}">View</a>
+                    <a href="building/update/{{building.id}}" type="button" class="btn btn-primary">Update</a>
+                    <a type="button" class="btn btn-danger" (click)="deleteBuilding(building)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
