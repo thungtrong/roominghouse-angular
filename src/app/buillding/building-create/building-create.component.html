@@ -15,13 +15,13 @@
 
         <div class="form-group">
             <label for="description"></label>
-            <textarea type="description" rows="5" id="description" class="form-control" id="description"
-                name="description" required placeholder="Nhập mô tả"></textarea>
+            <textarea [(ngModel)]="building.description" type="description" rows="5" id="description"
+                class="form-control" id="description" name="description" required placeholder="Nhập mô tả"></textarea>
         </div>
 
         <div class="form-group d-flex justify-content-end m-2">
             <button class="btn btn-primary" type="submit" id="submit">Tạo</button>
-            <a routerLink=".." class="btn btn-default">Quay Lại</a>
+            <a (click)="goBack()" class="btn btn-default">Quay Lại</a>
         </div>
     </form>
 </div>

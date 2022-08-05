@@ -41,4 +41,8 @@ export class BuildingCreateComponent implements OnInit {
     this.saveBuilding(this.building);
   }
 
+  goBack()
+  {
+    this.router.navigate(['/building']);
+  }
 }
