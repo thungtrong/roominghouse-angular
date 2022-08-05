@@ -8,13 +8,15 @@
 
         <tbody>
             <tr *ngFor="let announcement of announcements">
-                <td><a href="announcement/detail/{{announcement.id}}"> {{ announcement.title }} </a></td>
-                <td>{{ announcement.body }}</td>
-                <td>{{ announcement.date }}</td>
                 <td>
-                    <a type="button" class="btn btn-primary">View</a>
+                    <h3>{{ announcement.title }}</h3>
+                    <p>{{ announcement.body }}</p>
+                    <p><i>{{ announcement.date }}</i></p>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-primary" href="announcement/detail/{{announcement.id}}">View</a>
                     <a href="announcement/update/{{announcement.id}}" type="button" class="btn btn-primary">Update</a>
-                    <a type="button" class="btn btn-danger">Delete</a>
+                    <a type="button" class="btn btn-danger" (click)="deleteAnnouncement(announcement)">Delete</a>
                 </td>
             </tr>
         </tbody>

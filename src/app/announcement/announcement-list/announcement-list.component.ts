@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Announcement } from 'src/app/model/announcement';
+import { Announcement } from 'src/app/model/Announcement';
 import { AnnouncementService } from 'src/app/service/announcement.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AnnouncementService } from 'src/app/service/announcement.service';
   styleUrls: ['./announcement-list.component.css']
 })
 export class AnnouncementListComponent implements OnInit {
-  tableHeaders: string[] = ['Tiêu Đề', 'Nội Dung', 'Date', 'Action'];
+  tableHeaders: string[] = ['Thông báo', 'Thao tác'];
   announcements: Announcement[] = [];
   constructor(
     private announcementService: AnnouncementService,
@@ -23,13 +23,33 @@ export class AnnouncementListComponent implements OnInit {
   private getAllAnnouncements(page: number): void {
     this.announcementService.getAnnouncementList(page).subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.announcements = data.content;
-        // data.content.forEach((announcement) => {this.announcements.push(announcement)})
-        // data.content.forEach((announcement) => {this.announcements.push(announcement)})
       }
     );
   }
 
+  deleteAnnouncement(announcement: Announcement){
+    let choose = confirm(`Are you sure you want to delete this announcement`);
+    if (choose) {
+      this.announcementService.deleteAnnouncement(announcement).subscribe({
+        next: () => {
+          let i;
+          for (i = 0; i < this.announcements.length; i++) {
+            let announ = this.announcements[i];
+            if (announ.id === announcement.id)
+              {
+                break;
+              }
+          }
+          this.announcements.splice(i, i);
+          this.ngOnInit();
+        },
+        error: (error) => console.log(error)
+      });
+    }
+    else
+      console.log('ko xoa');
+  }
 }
 ;

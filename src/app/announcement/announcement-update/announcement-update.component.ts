@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Announcement } from 'src/app/model/announcement';
+import { Announcement } from 'src/app/model/Announcement';
 import { AnnouncementService } from 'src/app/service/announcement.service';
 @Component({
   selector: 'app-announcement-update',
