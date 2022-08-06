@@ -20,6 +20,10 @@ export class EmployeeDetailComponent implements OnInit {
     let id = this.activated.snapshot.params['id'];
     this.employeeService.getEmployeeById(id).subscribe({
       next: (data) => {
+        if (data===null) {
+          alert('Employee not found');
+          this.router.navigate(['/employee']);
+        }
         this.employee = data;
       }
     })

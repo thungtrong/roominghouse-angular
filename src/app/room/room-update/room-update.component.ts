@@ -26,6 +26,10 @@ export class RoomUpdateComponent implements OnInit {
     let id = this.activatedRoute.snapshot.params['id'];
     this.roomService.getRoomById(id).subscribe({
       next: (data) => {
+        if (data===null) {
+          alert('Room not found');
+          this.router.navigate(['/room']);
+        }
         this.room = data;
         this.selectedBuilding = JSON.stringify(this.room.building);
       },

@@ -23,6 +23,10 @@ export class RoomDetailComponent implements OnInit {
     {
       this.roomService.getRoomById(id).subscribe({
         next: (data) => {
+          if (data===null) {
+            alert('Room not found');
+            this.router.navigate(['/room']);
+          }
           this.room = data;
         },
         error: (error) => console.log(error)

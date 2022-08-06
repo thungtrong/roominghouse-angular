@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Announcement } from 'src/app/model/Announcement';
 import { AnnouncementService } from 'src/app/service/announcement.service';
 
@@ -11,13 +11,20 @@ import { AnnouncementService } from 'src/app/service/announcement.service';
 export class AnnouncementDetailComponent implements OnInit {
   announcement: Announcement = {};
   constructor(private announcementService: AnnouncementService,
+    private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     let params = this.activatedRoute.snapshot.params;
     let id = params['id'];
     this.announcementService.getAnnouncementById(+id).subscribe({
-      next: (data) => {this.announcement = data; console.log(data);},
+      next: (data) => {
+        if (data===null) {
+          alert('Announcement not found');
+          this.router.navigate(['/announcement']);
+        }
+        this.announcement = data;
+      },
       error: (error) => console.log(error)
     });
   }

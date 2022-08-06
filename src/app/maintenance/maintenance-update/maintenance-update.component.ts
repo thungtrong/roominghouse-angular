@@ -20,6 +20,10 @@ export class MaintenanceUpdateComponent implements OnInit {
     let id = this.activatedRoute.snapshot.params['id'];
     this.maintenanceService.getMaintenanceById(id).subscribe({
       next: (data) => {
+        if (data===null) {
+          alert('Maintenance not found');
+          this.router.navigate(['/maintenance']);
+        }
         this.maintenance = data;
       },
       error: err => console.log(err)

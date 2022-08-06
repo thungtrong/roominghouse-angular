@@ -23,6 +23,10 @@ export class BuildingUpdateComponent implements OnInit {
     {
       this.buildingService.getBuildingById(id).subscribe({
         next: (data) => {
+          if (data===null) {
+            alert('Building not found');
+            this.router.navigate(['/building']);
+          }
           this.building = data;
         },
         error: (error) => console.log(error)

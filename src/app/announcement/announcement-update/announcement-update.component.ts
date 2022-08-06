@@ -23,6 +23,10 @@ export class AnnouncementUpdateComponent implements OnInit {
     {
       this.announcementService.getAnnouncementById(id).subscribe({
         next: (data) => {
+          if (data===null) {
+            alert('Announcement not found');
+            this.router.navigate(['/announcement']);
+          }
           this.announcement = data;
           
           if (typeof data.date === 'string')

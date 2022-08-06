@@ -22,6 +22,10 @@ export class TenantDetailComponent implements OnInit {
     let id = this.activated.snapshot.params['id'];
     this.tenantService.getTenantById(id).subscribe({
       next: (data) => {
+        if (data===null) {
+          alert('Room not found');
+          this.router.navigate(['/room']);
+        }
         this.tenant = data;
         this.selectedRoom = JSON.stringify(data.room);
       }

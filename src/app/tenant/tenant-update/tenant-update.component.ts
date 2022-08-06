@@ -31,6 +31,10 @@ export class TenantUpdateComponent implements OnInit {
     });
     this.roomService.getRoomList(0).subscribe({
       next: (data) => {
+        if (data===null) {
+          alert('Room not found');
+          this.router.navigate(['/room']);
+        }
         this.rooms = data.content;
       },
       error: (err) => {

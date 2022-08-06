@@ -38,6 +38,10 @@ export class ContractDetailComponent implements OnInit {
     let id = this.activatedRoute.snapshot.params['id'];
     this.contractService.getContractById(id).subscribe({
       next: (data) => {
+        if (data===null) {
+          alert('Contract not found');
+          this.router.navigate(['/contract']);
+        }
         data.createDate = this.convertStringPatternToDate(data.createDate);
         data.startDate = this.convertStringPatternToDate(data.startDate);
         data.endDate = this.convertStringPatternToDate(data.endDate);
