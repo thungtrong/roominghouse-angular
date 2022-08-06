@@ -17,6 +17,11 @@ import { BuildingListComponent } from './buillding/building-list/building-list.c
 import { BuildingDetailComponent } from './buillding/building-detail/building-detail.component';
 import { BuildingUpdateComponent } from './buillding/building-update/building-update.component';
 import { BuildingCreateComponent } from './buillding/building-create/building-create.component';
+import { RoomComponent } from './room/room/room.component';
+import { RoomListComponent } from './room/room-list/room-list.component';
+import { RoomDetailComponent } from './room/room-detail/room-detail.component';
+import { RoomCreateComponent } from './room/room-create/room-create.component';
+import { RoomUpdateComponent } from './room/room-update/room-update.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,11 @@ import { BuildingCreateComponent } from './buillding/building-create/building-cr
     BuildingDetailComponent,
     BuildingUpdateComponent,
     BuildingCreateComponent,
+    RoomComponent,
+    RoomListComponent,
+    RoomDetailComponent,
+    RoomCreateComponent,
+    RoomUpdateComponent,
   ],
   imports: [
     BrowserModule,

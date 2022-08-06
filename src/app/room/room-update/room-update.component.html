@@ -1,0 +1,39 @@
+<div class="col-6 offset-3" id="content">
+    <h4>Tạo mới</h4>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name"></label>
+            <input [(ngModel)]="room.name" type="text" class="form-control" placeholder="Nhập tên phòng" id="name"
+                name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="status"></label>
+            <select [(ngModel)]="room.status" name="status" id="status" class="form-control">
+                <option value="false" selected>Trống</option>
+                <option value="true">Đã được thuê</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="area"></label>
+            <input [(ngModel)]="room.area" min='1' max='30' type="number" class="form-control"
+                placeholder="Nhập diện tích" id="area" name="area">
+        </div>
+        <div class="form-group">
+            <label for="building"></label>
+            <select name="building" id="building" class="form-control" [(ngModel)]="selectedBuilding">
+                <option *ngFor="let building of buildings;index as i_;" value={{stringify(building)}}>{{building.name}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description"></label>
+            <input [(ngModel)]="room.description" type="text" class="form-control" placeholder="Nhập mô tả"
+                id="description" name="description">
+        </div>
+        <div class="form-group d-flex justify-content-end m-2">
+            <button class="btn btn-primary" type="submit" id="submit">Cập nhật</button>
+            <a (click)="goBack()" class="btn btn-default">Quay Lại</a>
+        </div>
+    </form>
+</div>

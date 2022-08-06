@@ -17,6 +17,11 @@ export class BuildingService {
     return this.httpClient.get<Page<Building>>(`${this.apiUrl}/list?page=${page}`);
   }
 
+  public getAllBuilding(): Observable<Building[]>
+  {
+    return this.httpClient.get<Building[]>(`${this.apiUrl}/all`);
+  }
+
   public createBuilding(building: Building): Observable<Building>
   {
     return this.httpClient.post<Building>(`${this.apiUrl}/add`, building);

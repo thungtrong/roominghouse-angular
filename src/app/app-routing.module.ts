@@ -10,6 +10,11 @@ import { BuildingDetailComponent } from './buillding/building-detail/building-de
 import { BuildingListComponent } from './buillding/building-list/building-list.component';
 import { BuildingUpdateComponent } from './buillding/building-update/building-update.component';
 import { BuildingComponent } from './buillding/building/building.component';
+import { RoomCreateComponent } from './room/room-create/room-create.component';
+import { RoomDetailComponent } from './room/room-detail/room-detail.component';
+import { RoomListComponent } from './room/room-list/room-list.component';
+import { RoomUpdateComponent } from './room/room-update/room-update.component';
+import { RoomComponent } from './room/room/room.component';
 
 const routes: Routes = [
   {
@@ -36,7 +41,16 @@ const routes: Routes = [
     ],
     title: 'Toà Nhà'
   },
-
+  {path: 'room', component: RoomComponent,
+  children: [
+    {path: 'list', component: RoomListComponent},
+    {path: 'detail/:id', component: RoomDetailComponent},
+    {path: 'update/:id', component: RoomUpdateComponent, title: 'Cập Nhật Toà Nhà'},
+    {path: 'create', component: RoomCreateComponent, title: 'Thêm Toà Nhà'},
+    {path: '', component: RoomListComponent, pathMatch: 'full'}
+  ],
+  title: 'Toà Nhà'
+},
   {path: '', redirectTo: 'announcement', pathMatch: 'full'}
 ];
 
