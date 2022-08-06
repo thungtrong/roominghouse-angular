@@ -10,7 +10,10 @@ import { ServicepriceService } from 'src/app/service/serviceprice.service';
 })
 export class ServicePriceComponent implements OnInit {
   disable : boolean = true;
-  serviceprice: ServicePrice = {};
+  serviceprice: ServicePrice = {id: 1,
+    electric: 1,
+    water: 1,
+    internet: 1};;
   constructor(
     private service: ServicepriceService,
     private router: Router,

@@ -1,0 +1,75 @@
+<div class="col-6 offset-3" id="content">
+    <h4>Cập Nhật</h4>
+    <form>
+        <div class="form-group">
+            <label for="tenant"></label>
+            <input disabled name="tenant" id="tenant" class="form-control" [(ngModel)]="invoice.tenant.name" />
+        </div>
+
+        <div class="form-group">
+            <label for="employee"></label>
+            <input disabled name="employee" id="employee" class="form-control" [(ngModel)]="invoice.employee.name" />
+        </div>
+
+        <div class="form-group">
+            <label for="name"></label>
+            <input disabled [(ngModel)]="invoice.name" type="text" class="form-control" placeholder="Nhập tên hoá đơn"
+                id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="status"></label>
+            <select disabled name="status" id="status" class="form-control" [(ngModel)]="invoice.status">
+                <option value="false">Chưa thanh toán</option>
+                <option value="true">Đã thanh toán</option>
+            </select>
+        </div>
+
+        <table style="width: 100%;margin-top: 20px;">
+            <tr>
+                <th></th>
+                <th>Chỉ số</th>
+                <th>Thành Tiền</th>
+            </tr>
+
+            <tr>
+                <td><label for="electric">Điện: </label></td>
+                <td><input disabled [ngModel]="invoice.electric" type="number" class="form-control"
+                        placeholder="Nhập chỉ số điện" id="electric" name="electric" required /></td>
+                <td><input disabled disabled [(ngModel)]="invoice.electricCost" type="number" class="form-control"
+                        id="electricCost" name="electricCost" required /></td>
+            </tr>
+            <tr>
+                <td><label for="water">Nước: </label></td>
+                <td><input disabled [ngModel]="invoice.water" type="number" class="form-control"
+                        placeholder="Nhập chỉ số nước" id="water" name="water" required /></td>
+                <td><input disabled disabled [(ngModel)]="invoice.waterCost" type="number" class="form-control"
+                        id="waterCost" name="waterCost" required /></td>
+            </tr>
+            <tr>
+                <td><label for="internet">Internet </label></td>
+                <td><input disabled [ngModel]="invoice.internet" type="number" class="form-control"
+                        placeholder="Nhập số kết nối mạng" id="internet" name="internet" required /></td>
+                <td><input disabled disabled [(ngModel)]="invoice.internetCost" type="number" class="form-control"
+                        id="internetCost" name="internetCost" required /></td>
+            </tr>
+            <tr>
+                <td><label for="otherCost">Chi phí khác: </label></td>
+                <td colspan="2"><input disabled [(ngModel)]="invoice.otherCost" type="number" class="form-control"
+                        placeholder="Nhập chi phí khác" id="otherCost" name="otherCost" required /></td>
+            </tr>
+            <tr>
+                <td colspan="2">Tổng cộng:</td>
+                <td><b>{{getTotal()}}</b></td>
+            </tr>
+        </table>
+        <div class="form-group">
+            <label for="note"></label>
+            <textarea disabled rows="2" [(ngModel)]="invoice.note" type="text" class="form-control"
+                placeholder="Ghi chú" id="note" name="note" required></textarea>
+        </div>
+        <div class="form-group d-flex justify-content-end m-2">
+            <a (click)="goBack()" class="btn btn-default">Quay Lại</a>
+        </div>
+    </form>
+</div>

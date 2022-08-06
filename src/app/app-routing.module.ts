@@ -21,6 +21,11 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EmployeeUpdateComponent } from './employee/employee-update/employee-update.component';
 import { EmployeeComponent } from './employee/employee/employee.component';
+import { InvoiceCreateComponent } from './invoice/invoice-create/invoice-create.component';
+import { InvoiceDetailComponent } from './invoice/invoice-detail/invoice-detail.component';
+import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
+import { InvoiceUpdateComponent } from './invoice/invoice-update/invoice-update.component';
+import { InvoiceComponent } from './invoice/invoice/invoice.component';
 import { MaintenanceCreateComponent } from './maintenance/maintenance-create/maintenance-create.component';
 import { MaintenanceDetailComponent } from './maintenance/maintenance-detail/maintenance-detail.component';
 import { MaintenanceListComponent } from './maintenance/maintenance-list/maintenance-list.component';
@@ -68,8 +73,8 @@ const routes: Routes = [
     children: [
       {path: 'list', component: RoomListComponent},
       {path: 'detail/:id', component: RoomDetailComponent},
-      {path: 'update/:id', component: RoomUpdateComponent, title: 'Cập Nhật Toà Nhà'},
-      {path: 'create', component: RoomCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: 'update/:id', component: RoomUpdateComponent, title: 'Cập Nhật Phòng'},
+      {path: 'create', component: RoomCreateComponent, title: 'Thêm Phòng'},
       {path: '', component: RoomListComponent, pathMatch: 'full'}
   ],
     title: 'Phòng'
@@ -78,8 +83,8 @@ const routes: Routes = [
     children: [
       {path: 'list', component: TenantListComponent},
       {path: 'detail/:id', component: TenantDetailComponent},
-      {path: 'update/:id', component: TenantUpdateComponent, title: 'Cập Nhật Toà Nhà'},
-      {path: 'create', component: TenantCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: 'update/:id', component: TenantUpdateComponent, title: 'Cập Nhật Người Thuê'},
+      {path: 'create', component: TenantCreateComponent, title: 'Thêm Người Thuê'},
       {path: '', component: TenantListComponent, pathMatch: 'full'}
     ],
     title: 'Người Thuê'
@@ -88,32 +93,43 @@ const routes: Routes = [
     children: [
       {path: 'list', component: EmployeeListComponent},
       {path: 'detail/:id', component: EmployeeDetailComponent},
-      {path: 'update/:id', component: EmployeeUpdateComponent, title: 'Cập Nhật Toà Nhà'},
-      {path: 'create', component: EmployeeCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: 'update/:id', component: EmployeeUpdateComponent, title: 'Cập Nhật Nhân Viên'},
+      {path: 'create', component: EmployeeCreateComponent, title: 'Thêm Nhân Viên'},
       {path: '', component: EmployeeListComponent, pathMatch: 'full'}
     ],
     title: 'Nhân viên'
-  },
-  {path: 'maintenance', component: MaintenanceComponent,
-    children: [
-      {path: 'list', component: MaintenanceListComponent},
-      {path: 'detail/:id', component: MaintenanceDetailComponent},
-      {path: 'update/:id', component: MaintenanceUpdateComponent, title: 'Cập Nhật Toà Nhà'},
-      {path: 'create', component: MaintenanceCreateComponent, title: 'Thêm Toà Nhà'},
-      {path: '', component: MaintenanceListComponent, pathMatch: 'full'}
-    ],
-    title: 'Chi phí bảo trì'
   },
   {path: 'contract', component: ContractComponent,
     children: [
       {path: 'list', component: ContractListComponent},
       {path: 'detail/:id', component: ContractDetailComponent},
-      {path: 'update/:id', component: ContractUpdateComponent, title: 'Cập Nhật Toà Nhà'},
-      {path: 'create', component: ContractCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: 'update/:id', component: ContractUpdateComponent, title: 'Cập Nhật Hợp Đồng'},
+      {path: 'create', component: ContractCreateComponent, title: 'Thêm Hợp Đồng'},
       {path: '', component: ContractListComponent, pathMatch: 'full'}
+    ],
+    title: 'Hợp Đồng'
+  },
+  {path: 'invoice', component: InvoiceComponent,
+    children: [
+      {path: 'list', component: InvoiceListComponent},
+      {path: 'detail/:id', component: InvoiceDetailComponent},
+      {path: 'update/:id', component: InvoiceUpdateComponent, title: 'Cập Nhật Hoá Đơn'},
+      {path: 'create', component: InvoiceCreateComponent, title: 'Thêm Hoá Đơn'},
+      {path: '', component: InvoiceListComponent, pathMatch: 'full'}
+    ],
+    title: 'Hoá đơn'
+  },
+  {path: 'maintenance', component: MaintenanceComponent,
+    children: [
+      {path: 'list', component: MaintenanceListComponent},
+      {path: 'detail/:id', component: MaintenanceDetailComponent},
+      {path: 'update/:id', component: MaintenanceUpdateComponent, title: 'Cập Nhật Bảo Trì'},
+      {path: 'create', component: MaintenanceCreateComponent, title: 'Thêm Bảo Trì'},
+      {path: '', component: MaintenanceListComponent, pathMatch: 'full'}
     ],
     title: 'Chi phí bảo trì'
   },
+  
   {path: 'service', component: ServicePriceComponent,
     title: 'Dịch Vụ'
   },

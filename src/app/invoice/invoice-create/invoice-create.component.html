@@ -1,0 +1,78 @@
+<div class="col-6 offset-3" id="content">
+    <h4>Tạo mới</h4>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="tenant"></label>
+            <select name="tenant" id="tenant" class="form-control" [(ngModel)]="selectedTenant">
+                <option value="null">Chọn người thuê</option>
+                <option *ngFor="let tenant of tenants;index as i_;" value={{stringify(tenant)}}>{{tenant.name}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="employee"></label>
+            <select name="employee" id="employee" class="form-control" [(ngModel)]="selectedEmployee">
+                <option value="null">Chọn nhân viên</option>
+                <option *ngFor="let employee of employees;index as i_;" value={{stringify(employee)}}>{{employee.name}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="name"></label>
+            <input [(ngModel)]="invoice.name" type="text" class="form-control" placeholder="Nhập tên hoá đơn" id="name"
+                name="name" required />
+        </div>
+
+        <table style="width: 100%;margin-top: 20px;">
+            <tr>
+                <th></th>
+                <th>Chỉ số</th>
+                <th>Thành Tiền</th>
+            </tr>
+
+            <tr>
+                <td><label for="electric">Điện: </label></td>
+                <td><input [ngModel]="invoice.electric" type="number" class="form-control"
+                        (ngModelChange)="updateElectricCost($event)" placeholder="Nhập chỉ số điện" id="electric"
+                        name="electric" required /></td>
+                <td><input disabled [(ngModel)]="invoice.electricCost" type="number" class="form-control"
+                        id="electricCost" name="electricCost" required /></td>
+            </tr>
+            <tr>
+                <td><label for="water">Nước: </label></td>
+                <td><input [ngModel]="invoice.water" type="number" class="form-control" placeholder="Nhập chỉ số nước"
+                        (ngModelChange)="updateWaterCost($event)" id="water" name="water" required /></td>
+                <td><input disabled [(ngModel)]="invoice.waterCost" type="number" class="form-control" id="waterCost"
+                        name="waterCost" required /></td>
+            </tr>
+            <tr>
+                <td><label for="internet">Internet </label></td>
+                <td><input [ngModel]="invoice.internet" type="number" class="form-control"
+                        (ngModelChange)="updateInternetCost($event)" placeholder="Nhập số kết nối mạng" id="internet"
+                        name="internet" required /></td>
+                <td><input disabled [(ngModel)]="invoice.internetCost" type="number" class="form-control"
+                        id="internetCost" name="internetCost" required /></td>
+            </tr>
+            <tr>
+                <td><label for="otherCost">Chi phí khác: </label></td>
+                <td colspan="2"><input [(ngModel)]="invoice.otherCost" type="number" class="form-control"
+                        placeholder="Nhập chi phí khác" id="otherCost" name="otherCost" required /></td>
+            </tr>
+            <tr>
+                <td colspan="2">Tổng cộng:</td>
+                <td><b>{{getTotal()}}</b></td>
+            </tr>
+        </table>
+        <div class="form-group">
+            <label for="note"></label>
+            <textarea rows="2" [(ngModel)]="invoice.note" type="text" class="form-control" placeholder="Ghi chú"
+                id="note" name="note" required></textarea>
+        </div>
+        <div class="form-group d-flex justify-content-end m-2">
+            <button class="btn btn-primary" type="submit" id="submit">Tạo</button>
+            <a (click)="goBack()" class="btn btn-default">Quay Lại</a>
+        </div>
+    </form>
+</div>

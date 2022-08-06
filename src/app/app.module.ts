@@ -44,6 +44,11 @@ import { ContractListComponent } from './contract/contract-list/contract-list.co
 import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
 import { ContractUpdateComponent } from './contract/contract-update/contract-update.component';
 import { ContractDetailComponent } from './contract/contract-detail/contract-detail.component';
+import { InvoiceComponent } from './invoice/invoice/invoice.component';
+import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
+import { InvoiceCreateComponent } from './invoice/invoice-create/invoice-create.component';
+import { InvoiceUpdateComponent } from './invoice/invoice-update/invoice-update.component';
+import { InvoiceDetailComponent } from './invoice/invoice-detail/invoice-detail.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +93,11 @@ import { ContractDetailComponent } from './contract/contract-detail/contract-det
     ContractCreateComponent,
     ContractUpdateComponent,
     ContractDetailComponent,
+    InvoiceComponent,
+    InvoiceListComponent,
+    InvoiceCreateComponent,
+    InvoiceUpdateComponent,
+    InvoiceDetailComponent,
   ],
   imports: [
     BrowserModule,

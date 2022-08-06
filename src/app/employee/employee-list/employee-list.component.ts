@@ -20,6 +20,7 @@ export class EmployeeListComponent implements OnInit {
     this.getAllEmployees(0);
   }
 
+  
   getAllEmployees(page: number)
   {
     this.employeeService.getEmployeeList(page).subscribe({
@@ -36,15 +37,6 @@ export class EmployeeListComponent implements OnInit {
     if (choose) {
       this.employeeService.deleteEmployee(employee).subscribe({
         next: () => {
-          let i;
-          for (i = 0; i < this.employees.length; i++) {
-            let announ = this.employees[i];
-            if (announ.id === employee.id)
-              {
-                break;
-              }
-          }
-          this.employees.splice(i, i);
           this.ngOnInit();
         },
         error: (error) => console.log(error)

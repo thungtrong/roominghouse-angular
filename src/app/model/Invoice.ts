@@ -9,11 +9,12 @@ export interface Invoice
     electric?: number;
     water?: number;
     internet?: number;
-    other?: number;
     electricCost?: number;
     waterCost?: number;
     internetCost?: number;
     otherCost?: number;
-    tenant?: Tenant;
-    employee?: Employee;
+    note?: string;
+    tenant: Tenant;
+    employee: Employee;
+
 }
