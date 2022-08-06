@@ -1,1 +1,26 @@
-@import url('../shared/share.component.css')
+@import url('../shared/share.component.css');
+
+#content
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.block {
+    width: 14rem;
+    height: 14rem;
+    background-color: red;
+    margin: 5px;
+    border-radius: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
