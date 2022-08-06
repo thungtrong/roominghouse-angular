@@ -1,2 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+#header-container #title
+{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#update-button, #create-button
+{
+    height: 80%;
+}
+
+#content
+{
+    height: 75vh;
+}

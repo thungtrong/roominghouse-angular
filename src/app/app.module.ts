@@ -49,6 +49,7 @@ import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.compon
 import { InvoiceCreateComponent } from './invoice/invoice-create/invoice-create.component';
 import { InvoiceUpdateComponent } from './invoice/invoice-update/invoice-update.component';
 import { InvoiceDetailComponent } from './invoice/invoice-detail/invoice-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { InvoiceDetailComponent } from './invoice/invoice-detail/invoice-detail.
     InvoiceCreateComponent,
     InvoiceUpdateComponent,
     InvoiceDetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

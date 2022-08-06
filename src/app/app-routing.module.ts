@@ -26,6 +26,7 @@ import { InvoiceDetailComponent } from './invoice/invoice-detail/invoice-detail.
 import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
 import { InvoiceUpdateComponent } from './invoice/invoice-update/invoice-update.component';
 import { InvoiceComponent } from './invoice/invoice/invoice.component';
+import { LoginComponent } from './login/login.component';
 import { MaintenanceCreateComponent } from './maintenance/maintenance-create/maintenance-create.component';
 import { MaintenanceDetailComponent } from './maintenance/maintenance-detail/maintenance-detail.component';
 import { MaintenanceListComponent } from './maintenance/maintenance-list/maintenance-list.component';
@@ -44,7 +45,8 @@ import { TenantUpdateComponent } from './tenant/tenant-update/tenant-update.comp
 import { TenantComponent } from './tenant/tenant/tenant.component';
 
 const routes: Routes = [
-  {path: 'dasboard', component: DasboardComponent, title: 'Bảng Điều Khiển'},
+  {path: 'login', component: LoginComponent, title: 'Đăng Nhập'},
+  {path: 'dashboard', component: DasboardComponent, title: 'Bảng Điều Khiển'},
   {
     path: 'announcement',
     component: AnnouncementComponent,
@@ -133,7 +135,7 @@ const routes: Routes = [
   {path: 'service', component: ServicePriceComponent,
     title: 'Dịch Vụ'
   },
-  {path: '', redirectTo: 'dasboard', pathMatch: 'full'}
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];
 
 @NgModule({
