@@ -39,6 +39,11 @@ import { MaintenanceListComponent } from './maintenance/maintenance-list/mainten
 import { MaintenanceUpdateComponent } from './maintenance/maintenance-update/maintenance-update.component';
 import { MaintenanceCreateComponent } from './maintenance/maintenance-create/maintenance-create.component';
 import { MaintenanceDetailComponent } from './maintenance/maintenance-detail/maintenance-detail.component';
+import { ContractComponent } from './contract/contract/contract.component';
+import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
+import { ContractUpdateComponent } from './contract/contract-update/contract-update.component';
+import { ContractDetailComponent } from './contract/contract-detail/contract-detail.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +83,11 @@ import { MaintenanceDetailComponent } from './maintenance/maintenance-detail/mai
     MaintenanceUpdateComponent,
     MaintenanceCreateComponent,
     MaintenanceDetailComponent,
+    ContractComponent,
+    ContractListComponent,
+    ContractCreateComponent,
+    ContractUpdateComponent,
+    ContractDetailComponent,
   ],
   imports: [
     BrowserModule,

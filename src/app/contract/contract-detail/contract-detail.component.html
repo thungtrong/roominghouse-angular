@@ -1,0 +1,45 @@
+<div class="col-6 offset-3" id="content">
+    <h4>Cập Nhật</h4>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="tenant"></label>
+            <input disabled name="tenant" type="text" id="tenant" class="form-control"
+                [(ngModel)]="contract.tenant.name">
+        </div>
+
+        <div class="form-group">
+            <label for="employee"></label>
+            <input disabled name="employee" type="text" id="employee" class="form-control"
+                [(ngModel)]="contract.employee.name" />
+        </div>
+
+        <div class="form-group">
+            <label for="costPerMonth"></label>
+            <input disabled [(ngModel)]="contract.costPerMonth" type="number" multiple="true" class="form-control"
+                placeholder="Nhập giá thuê" id="costPerMonth" name="costPerMonth" required />
+        </div>
+
+        <div class="form-group">
+            <label for="createDate">Ngày tạo</label>
+            <input disabled type="date" #createDate [valueAsDate]="contract.createDate" class="form-control"
+                id="createDate" name="createDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="startDate">Ngày hiệu lực</label>
+            <input disabled type="date" #startDate [valueAsDate]="contract.startDate" class="form-control"
+                id="startDate" name="startDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="endDate">Ngày kết thúc</label>
+            <input disabled type="date" #endDate [valueAsDate]="contract.endDate" class="form-control" id="endDate"
+                name="endDate" required>
+        </div>
+
+        <div class="form-group d-flex justify-content-end m-2">
+            <!-- <button class="btn btn-primary" type="submit" id="submit">Cập nhật</button> -->
+            <a (click)="goBack()" class="btn btn-default">Quay Lại</a>
+        </div>
+    </form>
+</div>

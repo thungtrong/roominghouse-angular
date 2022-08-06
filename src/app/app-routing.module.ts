@@ -10,6 +10,11 @@ import { BuildingDetailComponent } from './buillding/building-detail/building-de
 import { BuildingListComponent } from './buillding/building-list/building-list.component';
 import { BuildingUpdateComponent } from './buillding/building-update/building-update.component';
 import { BuildingComponent } from './buillding/building/building.component';
+import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
+import { ContractDetailComponent } from './contract/contract-detail/contract-detail.component';
+import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import { ContractUpdateComponent } from './contract/contract-update/contract-update.component';
+import { ContractComponent } from './contract/contract/contract.component';
 import { DasboardComponent } from './dasboard/dasboard.component';
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
@@ -96,6 +101,16 @@ const routes: Routes = [
       {path: 'update/:id', component: MaintenanceUpdateComponent, title: 'Cập Nhật Toà Nhà'},
       {path: 'create', component: MaintenanceCreateComponent, title: 'Thêm Toà Nhà'},
       {path: '', component: MaintenanceListComponent, pathMatch: 'full'}
+    ],
+    title: 'Chi phí bảo trì'
+  },
+  {path: 'contract', component: ContractComponent,
+    children: [
+      {path: 'list', component: ContractListComponent},
+      {path: 'detail/:id', component: ContractDetailComponent},
+      {path: 'update/:id', component: ContractUpdateComponent, title: 'Cập Nhật Toà Nhà'},
+      {path: 'create', component: ContractCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: '', component: ContractListComponent, pathMatch: 'full'}
     ],
     title: 'Chi phí bảo trì'
   },
