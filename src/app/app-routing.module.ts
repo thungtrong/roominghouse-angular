@@ -15,6 +15,11 @@ import { RoomDetailComponent } from './room/room-detail/room-detail.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { RoomUpdateComponent } from './room/room-update/room-update.component';
 import { RoomComponent } from './room/room/room.component';
+import { TenantCreateComponent } from './tenant/tenant-create/tenant-create.component';
+import { TenantDetailComponent } from './tenant/tenant-detail/tenant-detail.component';
+import { TenantListComponent } from './tenant/tenant-list/tenant-list.component';
+import { TenantUpdateComponent } from './tenant/tenant-update/tenant-update.component';
+import { TenantComponent } from './tenant/tenant/tenant.component';
 
 const routes: Routes = [
   {
@@ -42,15 +47,25 @@ const routes: Routes = [
     title: 'Toà Nhà'
   },
   {path: 'room', component: RoomComponent,
-  children: [
-    {path: 'list', component: RoomListComponent},
-    {path: 'detail/:id', component: RoomDetailComponent},
-    {path: 'update/:id', component: RoomUpdateComponent, title: 'Cập Nhật Toà Nhà'},
-    {path: 'create', component: RoomCreateComponent, title: 'Thêm Toà Nhà'},
-    {path: '', component: RoomListComponent, pathMatch: 'full'}
+    children: [
+      {path: 'list', component: RoomListComponent},
+      {path: 'detail/:id', component: RoomDetailComponent},
+      {path: 'update/:id', component: RoomUpdateComponent, title: 'Cập Nhật Toà Nhà'},
+      {path: 'create', component: RoomCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: '', component: RoomListComponent, pathMatch: 'full'}
   ],
-  title: 'Toà Nhà'
-},
+    title: 'Phòng'
+  },  
+  {path: 'tenant', component: TenantComponent,
+    children: [
+      {path: 'list', component: TenantListComponent},
+      {path: 'detail/:id', component: TenantDetailComponent},
+      {path: 'update/:id', component: TenantUpdateComponent, title: 'Cập Nhật Toà Nhà'},
+      {path: 'create', component: TenantCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: '', component: TenantListComponent, pathMatch: 'full'}
+    ],
+    title: 'Phòng'
+  },
   {path: '', redirectTo: 'announcement', pathMatch: 'full'}
 ];
 

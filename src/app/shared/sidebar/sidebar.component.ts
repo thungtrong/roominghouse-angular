@@ -10,7 +10,7 @@ export class SidebarComponent implements OnInit {
   menu: Item[] = [
     {title: 'Toà Nhà',  path:"/building"}, 
     {title: 'Phòng',  path:"/room"},
-    {title: 'Người Thuê',  path:"/service"},
+    {title: 'Người Thuê',  path:"/tenant"},
     {title: 'Hợp Đồng',  path:"/service"},
     {title: 'Hoá Đơn',  path:"/service"},
     {title: 'Chí Phí Bảo Trì',  path:"/service"},

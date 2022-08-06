@@ -10,7 +10,6 @@ import { BuildingService } from 'src/app/service/building.service';
 })
 export class BuildingCreateComponent implements OnInit {
 
- 
   building: Building =  {};
   constructor(private buildingService: BuildingService,
               private router: Router) {    

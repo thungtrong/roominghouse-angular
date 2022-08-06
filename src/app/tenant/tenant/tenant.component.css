@@ -1,0 +1,10 @@
+#header-container #title
+{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#create-button
+{
+    height: 80%;
+}

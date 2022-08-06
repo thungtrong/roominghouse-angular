@@ -1,0 +1,55 @@
+<div class="col-6 offset-3">
+    <h4>Cập nhật</h4>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name"></label>
+            <input [(ngModel)]="tenant.name" type="text" class="form-control" placeholder="Nhập tên họ và tên" id="name"
+                name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender"></label>
+            <select [(ngModel)]="tenant.gender" name="gender" id="gender" class="form-control">
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber"></label>
+            <input [(ngModel)]="tenant.phoneNumber" type="text" rows="5" id="phoneNumber" class="form-control"
+                id="phoneNumber" name="phoneNumber" required placeholder="Nhập số điện thoại" />
+        </div>
+        <div class="form-group">
+            <label for="email"></label>
+            <input [(ngModel)]="tenant.email" type="email" rows="5" id="email" class="form-control" id="email"
+                name="email" required placeholder="Nhập địa chỉ email" />
+        </div>
+        <div class="form-group">
+            <label for="indentityCard"></label>
+            <input [(ngModel)]="tenant.indentityCard" type="text" rows="5" maxlength="15" id="indentityCard"
+                class="form-control" id="indentityCard" name="indentityCard" required placeholder="Nhập số CMND/CCCD" />
+        </div>
+        <div class="form-group">
+            <label for="job"></label>
+            <input [(ngModel)]="tenant.job" type="text" rows="5" id="job" class="form-control" id="job" name="job"
+                required placeholder="Nhập số công việc hiện tại" />
+        </div>
+        <div class="form-group">
+            <label for="hometown"></label>
+            <input [(ngModel)]="tenant.hometown" type="text" rows="5" id="hometown" class="form-control" id="hometown"
+                name="hometown" required placeholder="Nhập quê quán" />
+        </div>
+        <div class="form-group">
+            <label for="room"></label>
+            <select name="room" id="room" class="form-control" [(ngModel)]="selectedRoom">
+                <option value="null">Chọn phòng</option>
+                <option *ngFor="let room of rooms;index as i_;" value={{stringify(room)}}>{{room.name}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group d-flex justify-content-end m-2">
+            <button class="btn btn-primary" type="submit" id="submit">Cập nhật</button>
+            <a (click)="goBack()" class="btn btn-default">Quay Lại</a>
+        </div>
+    </form>
+</div>

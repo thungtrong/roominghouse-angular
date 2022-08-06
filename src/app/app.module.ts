@@ -22,6 +22,11 @@ import { RoomListComponent } from './room/room-list/room-list.component';
 import { RoomDetailComponent } from './room/room-detail/room-detail.component';
 import { RoomCreateComponent } from './room/room-create/room-create.component';
 import { RoomUpdateComponent } from './room/room-update/room-update.component';
+import { TenantComponent } from './tenant/tenant/tenant.component';
+import { TenantListComponent } from './tenant/tenant-list/tenant-list.component';
+import { TenantCreateComponent } from './tenant/tenant-create/tenant-create.component';
+import { TenantUpdateComponent } from './tenant/tenant-update/tenant-update.component';
+import { TenantDetailComponent } from './tenant/tenant-detail/tenant-detail.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +49,11 @@ import { RoomUpdateComponent } from './room/room-update/room-update.component';
     RoomDetailComponent,
     RoomCreateComponent,
     RoomUpdateComponent,
+    TenantComponent,
+    TenantListComponent,
+    TenantCreateComponent,
+    TenantUpdateComponent,
+    TenantDetailComponent,
   ],
   imports: [
     BrowserModule,
