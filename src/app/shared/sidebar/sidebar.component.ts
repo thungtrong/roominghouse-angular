@@ -11,6 +11,7 @@ export class SidebarComponent implements OnInit {
     {title: 'Toà Nhà',  path:"/building"}, 
     {title: 'Phòng',  path:"/room"},
     {title: 'Người Thuê',  path:"/tenant"},
+    {title: 'Nhân Viên',  path:"/employee"},
     {title: 'Hợp Đồng',  path:"/service"},
     {title: 'Hoá Đơn',  path:"/service"},
     {title: 'Chí Phí Bảo Trì',  path:"/service"},

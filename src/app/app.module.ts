@@ -27,6 +27,11 @@ import { TenantListComponent } from './tenant/tenant-list/tenant-list.component'
 import { TenantCreateComponent } from './tenant/tenant-create/tenant-create.component';
 import { TenantUpdateComponent } from './tenant/tenant-update/tenant-update.component';
 import { TenantDetailComponent } from './tenant/tenant-detail/tenant-detail.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
+import { EmployeeUpdateComponent } from './employee/employee-update/employee-update.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +59,11 @@ import { TenantDetailComponent } from './tenant/tenant-detail/tenant-detail.comp
     TenantCreateComponent,
     TenantUpdateComponent,
     TenantDetailComponent,
+    EmployeeComponent,
+    EmployeeListComponent,
+    EmployeeDetailComponent,
+    EmployeeCreateComponent,
+    EmployeeUpdateComponent,
   ],
   imports: [
     BrowserModule,

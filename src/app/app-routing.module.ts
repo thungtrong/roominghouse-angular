@@ -10,6 +10,11 @@ import { BuildingDetailComponent } from './buillding/building-detail/building-de
 import { BuildingListComponent } from './buillding/building-list/building-list.component';
 import { BuildingUpdateComponent } from './buillding/building-update/building-update.component';
 import { BuildingComponent } from './buillding/building/building.component';
+import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
+import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { EmployeeUpdateComponent } from './employee/employee-update/employee-update.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
 import { RoomCreateComponent } from './room/room-create/room-create.component';
 import { RoomDetailComponent } from './room/room-detail/room-detail.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
@@ -64,7 +69,17 @@ const routes: Routes = [
       {path: 'create', component: TenantCreateComponent, title: 'Thêm Toà Nhà'},
       {path: '', component: TenantListComponent, pathMatch: 'full'}
     ],
-    title: 'Phòng'
+    title: 'Người Thuê'
+  },
+  {path: 'employee', component: EmployeeComponent,
+    children: [
+      {path: 'list', component: EmployeeListComponent},
+      {path: 'detail/:id', component: EmployeeDetailComponent},
+      {path: 'update/:id', component: EmployeeUpdateComponent, title: 'Cập Nhật Toà Nhà'},
+      {path: 'create', component: EmployeeCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: '', component: EmployeeListComponent, pathMatch: 'full'}
+    ],
+    title: 'Nhân viên'
   },
   {path: '', redirectTo: 'announcement', pathMatch: 'full'}
 ];
