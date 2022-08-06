@@ -16,6 +16,11 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EmployeeUpdateComponent } from './employee/employee-update/employee-update.component';
 import { EmployeeComponent } from './employee/employee/employee.component';
+import { MaintenanceCreateComponent } from './maintenance/maintenance-create/maintenance-create.component';
+import { MaintenanceDetailComponent } from './maintenance/maintenance-detail/maintenance-detail.component';
+import { MaintenanceListComponent } from './maintenance/maintenance-list/maintenance-list.component';
+import { MaintenanceUpdateComponent } from './maintenance/maintenance-update/maintenance-update.component';
+import { MaintenanceComponent } from './maintenance/maintenance/maintenance.component';
 import { RoomCreateComponent } from './room/room-create/room-create.component';
 import { RoomDetailComponent } from './room/room-detail/room-detail.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
@@ -83,6 +88,16 @@ const routes: Routes = [
       {path: '', component: EmployeeListComponent, pathMatch: 'full'}
     ],
     title: 'Nhân viên'
+  },
+  {path: 'maintenance', component: MaintenanceComponent,
+    children: [
+      {path: 'list', component: MaintenanceListComponent},
+      {path: 'detail/:id', component: MaintenanceDetailComponent},
+      {path: 'update/:id', component: MaintenanceUpdateComponent, title: 'Cập Nhật Toà Nhà'},
+      {path: 'create', component: MaintenanceCreateComponent, title: 'Thêm Toà Nhà'},
+      {path: '', component: MaintenanceListComponent, pathMatch: 'full'}
+    ],
+    title: 'Chi phí bảo trì'
   },
   {path: 'service', component: ServicePriceComponent,
     title: 'Dịch Vụ'

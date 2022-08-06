@@ -1,10 +1,1 @@
-#header-container #title
-{
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-#create-button
-{
-    height: 80%;
-}
+@import url('../../shared/share.component.css')

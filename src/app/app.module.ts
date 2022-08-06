@@ -34,6 +34,11 @@ import { EmployeeCreateComponent } from './employee/employee-create/employee-cre
 import { EmployeeUpdateComponent } from './employee/employee-update/employee-update.component';
 import { DasboardComponent } from './dasboard/dasboard.component';
 import { ServicePriceComponent } from './serviceprice/service-price/service-price.component';
+import { MaintenanceComponent } from './maintenance/maintenance/maintenance.component';
+import { MaintenanceListComponent } from './maintenance/maintenance-list/maintenance-list.component';
+import { MaintenanceUpdateComponent } from './maintenance/maintenance-update/maintenance-update.component';
+import { MaintenanceCreateComponent } from './maintenance/maintenance-create/maintenance-create.component';
+import { MaintenanceDetailComponent } from './maintenance/maintenance-detail/maintenance-detail.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +73,11 @@ import { ServicePriceComponent } from './serviceprice/service-price/service-pric
     EmployeeUpdateComponent,
     DasboardComponent,
     ServicePriceComponent,
+    MaintenanceComponent,
+    MaintenanceListComponent,
+    MaintenanceUpdateComponent,
+    MaintenanceCreateComponent,
+    MaintenanceDetailComponent,
   ],
   imports: [
     BrowserModule,

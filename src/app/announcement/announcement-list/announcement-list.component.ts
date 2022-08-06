@@ -34,15 +34,6 @@ export class AnnouncementListComponent implements OnInit {
     if (choose) {
       this.announcementService.deleteAnnouncement(announcement).subscribe({
         next: () => {
-          let i;
-          for (i = 0; i < this.announcements.length; i++) {
-            let announ = this.announcements[i];
-            if (announ.id === announcement.id)
-              {
-                break;
-              }
-          }
-          this.announcements.splice(i, i);
           this.ngOnInit();
         },
         error: (error) => console.log(error)

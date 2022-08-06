@@ -1,0 +1,23 @@
+<div style="min-height: 74.7vh;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let header of tableHeaders"> {{header}} </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let maintenance of maintenances">
+                <td>{{ maintenance.name }}</td>
+                <td>{{ maintenance.cost }}</td>
+                <td><i>{{ maintenance.date }}</i></td>
+                <td>{{ maintenance.description}}</td>
+                <td>
+                    <a type="button" class="btn btn-primary" href="maintenance/detail/{{maintenance.id}}">View</a>
+                    <a href="maintenance/update/{{maintenance.id}}" type="button" class="btn btn-primary">Update</a>
+                    <a type="button" class="btn btn-danger" (click)="deleteMaintenance(maintenance)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
