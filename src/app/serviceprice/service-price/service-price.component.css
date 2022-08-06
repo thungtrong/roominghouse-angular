@@ -1,0 +1,15 @@
+#header-container #title
+{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#update-button
+{
+    height: 80%;
+}
+
+#content
+{
+    height: 75vh;
+}

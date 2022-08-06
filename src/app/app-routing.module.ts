@@ -10,6 +10,7 @@ import { BuildingDetailComponent } from './buillding/building-detail/building-de
 import { BuildingListComponent } from './buillding/building-list/building-list.component';
 import { BuildingUpdateComponent } from './buillding/building-update/building-update.component';
 import { BuildingComponent } from './buillding/building/building.component';
+import { DasboardComponent } from './dasboard/dasboard.component';
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
@@ -20,6 +21,7 @@ import { RoomDetailComponent } from './room/room-detail/room-detail.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { RoomUpdateComponent } from './room/room-update/room-update.component';
 import { RoomComponent } from './room/room/room.component';
+import { ServicePriceComponent } from './serviceprice/service-price/service-price.component';
 import { TenantCreateComponent } from './tenant/tenant-create/tenant-create.component';
 import { TenantDetailComponent } from './tenant/tenant-detail/tenant-detail.component';
 import { TenantListComponent } from './tenant/tenant-list/tenant-list.component';
@@ -27,6 +29,7 @@ import { TenantUpdateComponent } from './tenant/tenant-update/tenant-update.comp
 import { TenantComponent } from './tenant/tenant/tenant.component';
 
 const routes: Routes = [
+  {path: 'dasboard', component: DasboardComponent, title: 'Bảng Điều Khiển'},
   {
     path: 'announcement',
     component: AnnouncementComponent,
@@ -81,7 +84,10 @@ const routes: Routes = [
     ],
     title: 'Nhân viên'
   },
-  {path: '', redirectTo: 'announcement', pathMatch: 'full'}
+  {path: 'service', component: ServicePriceComponent,
+    title: 'Dịch Vụ'
+  },
+  {path: '', redirectTo: 'dasboard', pathMatch: 'full'}
 ];
 
 @NgModule({

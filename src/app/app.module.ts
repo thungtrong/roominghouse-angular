@@ -32,6 +32,8 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
 import { EmployeeUpdateComponent } from './employee/employee-update/employee-update.component';
+import { DasboardComponent } from './dasboard/dasboard.component';
+import { ServicePriceComponent } from './serviceprice/service-price/service-price.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { EmployeeUpdateComponent } from './employee/employee-update/employee-upd
     EmployeeDetailComponent,
     EmployeeCreateComponent,
     EmployeeUpdateComponent,
+    DasboardComponent,
+    ServicePriceComponent,
   ],
   imports: [
     BrowserModule,
