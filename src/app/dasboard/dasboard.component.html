@@ -6,13 +6,17 @@
             <div class="container">
 
                 <app-navbar></app-navbar>
-                <div class="row">
+                <div id="content">
                     <div class="header-container d-flex justify-content-between" id="header-container">
                         <span id="title">Bảng Điều Khiển</span>
                     </div>
 
-                    <div id="content">
-                        <a class="block" *ngFor="let control of controls" href="{{control.path}}">{{control.name}}</a>
+                    <div class="d-flex flex-wrap mt-4">
+                        <a class="block col-2" *ngFor="let control of controls;index as i"
+                            routerLink="/{{control.path}}">
+                            <p class="display-name">{{control.displayName}}</p>
+                            <p class="wrap-icon"><i class="{{control.icon}}" aria-hidden="true"></i></p>
+                        </a>
                     </div>
                 </div>
                 <app-footer></app-footer>

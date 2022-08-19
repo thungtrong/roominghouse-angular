@@ -1,4 +1,4 @@
-<div style="min-height: 74.7vh;">
+<div id="content">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -16,10 +16,13 @@
                 <td>{{ invoice.status ? 'Đã thanh toán' : 'Chưa thanh toán' }}</td>
                 <td>{{invoice.employee ? invoice.employee.name : '' }}</td>
 
-                <td>
-                    <a type="button" class="btn btn-primary" href="invoice/detail/{{invoice.id}}">View</a>
-                    <a href="invoice/update/{{invoice.id}}" type="button" class="btn btn-primary">Update</a>
-                    <a type="button" class="btn btn-danger" (click)="deleteInvoice(invoice)">Delete</a>
+                <td class="action-group">
+                    <a type="button" class="btn btn-primary" routerLink="/invoice/detail/{{invoice.id}}">
+                        <i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a routerLink="/invoice/update/{{invoice.id}}" type="button" class="btn btn-primary">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a type="button" class="btn btn-danger" (click)="deleteInvoice(invoice)">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
         </tbody>

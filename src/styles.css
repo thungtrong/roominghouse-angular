@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+body
+{
+    position: relative;
+    overflow-x: hidden;
+}
+
 #header-container #title
 {
     font-size: 2rem;
@@ -14,5 +20,15 @@
 
 #content
 {
-    min-height: 75vh;
+    min-height: 77vh;
+}
+
+td.action-group
+{
+    width: 10vw;
+}
+
+.form-group
+{
+    margin-top: 10px;
 }

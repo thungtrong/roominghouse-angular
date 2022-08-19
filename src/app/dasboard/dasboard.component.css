@@ -1,26 +1,87 @@
 @import url('../shared/share.component.css');
 
+a {
+    text-decoration: none;
+}
 #content
 {
-    display: flex;
-    flex-wrap: wrap;
+    min-height: 83.8vh;
 }
-
-a {
-    color: #000;
-    text-decoration: none;
+#header-container
+{
+    height: 10vh;
 }
 
 .block {
-    width: 14rem;
-    height: 14rem;
-    background-color: red;
-    margin: 5px;
-    border-radius: 1em;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: max-content;
+    text-align: left;
     font-size: 1.5em;
     font-weight: bold;
+    border-right: 2px solid rgb(136, 113, 113);
+    opacity: 0.7;
+    margin-bottom: 5vh;
+}
+
+.block:hover
+{
+    opacity: 1
+}
+
+.block:nth-child(1)
+{
+    color: red;
+}
+
+.block:nth-child(2)
+{
+    color: rgb(158, 134, 134);
+}
+
+.block:nth-child(3)
+{
+    color: rgb(246, 116, 36);
+}
+.block:nth-child(4)
+{
+    color: rgb(65, 20, 247);
+}
+.block:nth-child(5)
+{
+    color: rgb(1, 176, 100);
+}
+.block:nth-child(6)
+{
+    color: rgb(75, 118, 56);
+}
+.block:nth-child(7)
+{
+    color: rgb(181, 20, 111);
+}
+.block:nth-child(8)
+{
+    color: rgb(36, 38, 35);
+}
+.block:nth-child(9)
+{
+    color: rgb(91, 178, 9);
+}
+
+.block .count {
+    text-align: left;
+    font-size: 2em;
+}
+
+.block:last-child
+{
+    border: none;
+}
+
+.wrap-icon 
+{
+    font-size: 2em;
+    text-align: right;
+    padding-right: 1vw;
+}
+.display-name {
+    padding: 0.5vw;
 }

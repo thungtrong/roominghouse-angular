@@ -1,6 +1,8 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Maintenance } from 'src/app/model/Maintenance';
+import { BasicCommponent } from 'src/app/service/basic-component';
 import { MaintenanceService } from 'src/app/service/maintenance.service';
 
 @Component({
@@ -8,11 +10,13 @@ import { MaintenanceService } from 'src/app/service/maintenance.service';
   templateUrl: './maintenance-create.component.html',
   styleUrls: ['./maintenance-create.component.css']
 })
-export class MaintenanceCreateComponent implements OnInit {
+export class MaintenanceCreateComponent extends BasicCommponent implements OnInit {
 
   maintenance: Maintenance =  {date: new Date()};
   constructor(private maintenanceService: MaintenanceService,
-              private router: Router) {    
+              private router: Router,
+              location: Location) {    
+                super(location);
    }
 
   ngOnInit(): void {

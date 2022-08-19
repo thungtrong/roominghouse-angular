@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DasboardComponent implements OnInit {
   controls = [
-    {name: 'Toà Nhà', path: '/building'},
-    {name: 'Phòng', path: '/room'},
-    {name: 'Người Thuê', path: '/tenant'},
-    {name: 'Nhân Viên', path: '/employee'},
-    {name: 'Hợp Đồng', path: '/contract'},
-    {name: 'Hoá đơn', path: '/invoice'},
-    {name: 'Chí phí bảo trì', path: '/maintenance'},
-    {name: 'Thông báo', path: '/announcement'},
-    {name: 'Dịch Vụ', path: '/service'},
+    {displayName: 'Toà Nhà', path: '/building', icon: 'fa fa-building'},
+    {displayName: 'Phòng', path: '/room', icon: 'fa fa-home'},
+    {displayName: 'Người Thuê', path: '/tenant', icon: 'fa fa-users'},
+    {displayName: 'Nhân Viên', path: '/employee', icon: 'fa fa-user-circle-o'},
+    {displayName: 'Hợp Đồng', path: '/contract', icon: 'fa fa-file-text-o'},
+    {displayName: 'Hoá đơn', path: '/invoice', icon: 'fa fa-file-o'},
+    {displayName: 'Chí phí bảo trì', path: '/maintenance', icon: 'fa fa-wrench'},
+    {displayName: 'Thông báo', path: '/announcement', icon: 'fa fa-bell'},
+    {displayName: 'Dịch Vụ', path: '/service', icon: 'fa fa-usd'},
   ]
   constructor() { }
 

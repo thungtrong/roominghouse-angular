@@ -1,10 +1,5 @@
-<div style="min-height: 74.7vh;">
+<div id="content">
     <table class="table table-striped">
-        <thead>
-            <tr>
-                <th *ngFor="let header of tableHeaders"> {{header}} </th>
-            </tr>
-        </thead>
 
         <tbody>
             <tr *ngFor="let announcement of announcements">
@@ -12,12 +7,19 @@
                     <h3>{{ announcement.title }}</h3>
                     <p>{{ announcement.body }}</p>
                     <p><i>{{ announcement.date }}</i></p>
+                    <p class="action-group">
+                        <a type="button" class="btn-primary" routerLink="/announcement/detail/{{announcement.id}}">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </a>
+                        <a routerLink="/announcement/update/{{announcement.id}}" type="button" class="btn-primary">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                        <a type="button" class="btn-danger" (click)="deleteAnnouncement(announcement)">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+                    </p>
                 </td>
-                <td>
-                    <a type="button" class="btn btn-primary" href="announcement/detail/{{announcement.id}}">View</a>
-                    <a href="announcement/update/{{announcement.id}}" type="button" class="btn btn-primary">Update</a>
-                    <a type="button" class="btn btn-danger" (click)="deleteAnnouncement(announcement)">Delete</a>
-                </td>
+
             </tr>
         </tbody>
     </table>

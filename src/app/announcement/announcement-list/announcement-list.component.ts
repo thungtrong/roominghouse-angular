@@ -9,7 +9,6 @@ import { AnnouncementService } from 'src/app/service/announcement.service';
   styleUrls: ['./announcement-list.component.css']
 })
 export class AnnouncementListComponent implements OnInit {
-  tableHeaders: string[] = ['Thông báo', 'Thao tác'];
   announcements: Announcement[] = [];
   constructor(
     private announcementService: AnnouncementService,

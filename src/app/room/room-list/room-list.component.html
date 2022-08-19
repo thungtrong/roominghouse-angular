@@ -1,4 +1,4 @@
-<div style="min-height: 74.7vh;">
+<div id="content">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -15,10 +15,13 @@
                 <td>{{ room.area}}</td>
                 <td>{{ room.building ? room.building.name : '' }}</td>
                 <td> {{room.description }}</td>
-                <td>
-                    <a type="button" class="btn btn-primary" href="room/detail/{{room.id}}">View</a>
-                    <a href="room/update/{{room.id}}" type="button" class="btn btn-primary">Update</a>
-                    <a type="button" class="btn btn-danger" (click)="deleteRoom(room)">Delete</a>
+                <td class="action-group">
+                    <a type="button" class="btn btn-primary" routerLink="/room/detail/{{room.id}}">
+                        <i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a routerLink="/room/update/{{room.id}}" type="button" class="btn btn-primary">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a type="button" class="btn btn-danger" (click)="deleteRoom(room)">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
         </tbody>

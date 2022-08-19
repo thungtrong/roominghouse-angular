@@ -1,7 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Room } from 'src/app/model/Room';
 import { Tenant } from 'src/app/model/Tenant';
+import { BasicCommponent } from 'src/app/service/basic-component';
 import { RoomService } from 'src/app/service/room.service';
 import { TenantService } from 'src/app/service/tenant.service';
 
@@ -10,7 +12,7 @@ import { TenantService } from 'src/app/service/tenant.service';
   templateUrl: './tenant-update.component.html',
   styleUrls: ['./tenant-update.component.css']
 })
-export class TenantUpdateComponent implements OnInit {
+export class TenantUpdateComponent extends BasicCommponent implements OnInit {
 
   tenant: Tenant =  {gender: true};
   rooms: Room[] = [];
@@ -18,7 +20,9 @@ export class TenantUpdateComponent implements OnInit {
   constructor(private tenantService: TenantService,
               private roomService: RoomService,
               private router: Router,
-              private activated: ActivatedRoute) {    
+              private activated: ActivatedRoute,
+              location: Location) {
+                super(location);
    }
 
   ngOnInit(): void {
@@ -73,8 +77,4 @@ export class TenantUpdateComponent implements OnInit {
     this.saveTenant(this.tenant);
   }
 
-  goBack()
-  {
-    this.router.navigate(['/tenant']);
-  }
 }

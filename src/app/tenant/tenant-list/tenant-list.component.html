@@ -1,4 +1,4 @@
-<div style="min-height: 74.7vh;">
+<div id="content">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -18,10 +18,13 @@
                 <td> {{tenant.job}} </td>
                 <td>{{tenant.hometown}}</td>
                 <td> {{tenant.room ? tenant.room.name : ''}}</td>
-                <td>
-                    <a type="button" class="btn btn-primary" href="tenant/detail/{{tenant.id}}">View</a>
-                    <a href="tenant/update/{{tenant.id}}" type="button" class="btn btn-primary">Update</a>
-                    <a type="button" class="btn btn-danger" (click)="deleteTenant(tenant)">Delete</a>
+                <td class="action-group">
+                    <a type="button" class="btn btn-primary" routerLink="/tenant/detail/{{tenant.id}}">
+                        <i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a routerLink="/tenant/update/{{tenant.id}}" type="button" class="btn btn-primary">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a type="button" class="btn btn-danger" (click)="deleteTenant(tenant)">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
         </tbody>

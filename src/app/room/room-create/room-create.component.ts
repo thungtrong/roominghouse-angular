@@ -59,6 +59,6 @@ export class RoomCreateComponent implements OnInit {
 
   goBack()
   {
-    this.router.navigate(['/building']);
+    this.router.navigate(['/room']);
   }
 }

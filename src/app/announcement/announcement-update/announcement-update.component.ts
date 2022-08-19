@@ -1,20 +1,23 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Announcement } from 'src/app/model/Announcement';
 import { AnnouncementService } from 'src/app/service/announcement.service';
+import { BasicCommponent } from 'src/app/service/basic-component';
 @Component({
   selector: 'app-announcement-update',
   templateUrl: './announcement-update.component.html',
   styleUrls: ['./announcement-update.component.css']
 })
-export class AnnouncementUpdateComponent implements OnInit {
+export class AnnouncementUpdateComponent extends BasicCommponent implements OnInit {
 
   announcement: Announcement =  {date: new Date()};
   constructor(private announcementService: AnnouncementService, 
     private router: Router,
-    private route: ActivatedRoute,) {
-    
+    private route: ActivatedRoute,
+    location: Location
+    ) {
+    super(location);
    }
 
   ngOnInit(): void {
@@ -50,6 +53,11 @@ export class AnnouncementUpdateComponent implements OnInit {
       error: (error) => console.log(error)
     });
   }
+
+  // goBack()
+  // {
+  //   this.location.back();
+  // }
 
   parseDate(target: any)
   {

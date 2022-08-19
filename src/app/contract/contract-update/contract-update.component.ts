@@ -35,6 +35,15 @@ export class ContractUpdateComponent implements OnInit {
         return pattern;
    }
   ngOnInit(): void {
+    this.tenantService.getTenantList(0).subscribe({
+      next: data => this.tenants = data.content,
+      error: err => console.log(err)
+    });
+    this.employeeService.getEmployeeList(0).subscribe({
+      next: data => this.employees = data.content,
+      error: err => console.log(err)
+    })
+
     let id = this.activatedRoute.snapshot.params['id'];
     this.contractService.getContractById(id).subscribe({
       next: (data) => {
@@ -48,7 +57,6 @@ export class ContractUpdateComponent implements OnInit {
         this.contract = data;
         this.selectedEmployee = JSON.stringify(this.contract.employee);
         this.selectedTenant = JSON.stringify(this.contract.tenant);
-        
       },
       error: (err) => console.log(err)
     })
