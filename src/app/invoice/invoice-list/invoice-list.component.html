@@ -12,9 +12,10 @@
                     {{ invoice.name }}
                 </td>
                 <td>{{invoice.tenant ? invoice.tenant.name : '' }}</td>
-                <td>{{ getTotal(invoice) }}</td>
-                <td>{{ invoice.status ? 'Đã thanh toán' : 'Chưa thanh toán' }}</td>
                 <td>{{invoice.employee ? invoice.employee.name : '' }}</td>
+
+                <td>{{ invoice.status ? 'Đã thanh toán' : 'Chưa thanh toán' }}</td>
+                <td>{{ getTotal(invoice) }}</td>
 
                 <td class="action-group">
                     <a type="button" class="btn btn-primary" routerLink="/invoice/detail/{{invoice.id}}">

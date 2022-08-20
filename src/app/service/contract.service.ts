@@ -34,6 +34,6 @@ export class ContractService {
 
   public deleteContract(contract: Contract): Observable<void>
   {
-    return this.httpClient.delete<void>(`${this.apiUrl}/delete`, {body:contract});
+    return this.httpClient.delete<void>(`${this.apiUrl}/delete/${contract.id}`);
   }
 }

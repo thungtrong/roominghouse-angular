@@ -53,7 +53,6 @@ export class TenantUpdateComponent extends BasicCommponent implements OnInit {
     this.tenantService.updateTenant(tenant).subscribe(
       {
         next: (data) => {
-          console.log(data);
           this.goToTenantList();
         },
         error: err => {
