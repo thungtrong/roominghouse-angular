@@ -34,6 +34,6 @@ export class MaintenanceService {
 
   public deleteMaintenance(maintenance: Maintenance): Observable<void>
   {
-    return this.httpClient.delete<void>(`${this.apiUrl}/delete`, {body:maintenance});
+    return this.httpClient.delete<void>(`${this.apiUrl}/delete/${maintenance.id}`);
   }
 }
